@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression Suite">
+<listeners>
+        <listener class-name="org.galileo1.bdd.helpers.TestListener"></listener>
+</listeners>
+
+<test name="SampleTest">
+<classes>
+<class name="org.galileo1.bdd.SampleTestClass"></class>
+</classes>
+</test>
+
+
+</suite>

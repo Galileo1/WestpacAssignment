@@ -1,0 +1,40 @@
+{
+    "dataSet": [
+      {
+        "age": "30",
+        "empStatus": "Employed",
+        "salary": "82000",
+        "empContirb": "4",
+        "pir": "17.5%",
+        "balance": "",
+        "volContirb": "",
+        "freq": "",
+        "goal": "",
+        "risk": "high"
+      },
+      {
+        "age": "45",
+        "empStatus": "Self-employed",
+        "salary": "",
+        "empContirb": "",
+        "pir": "10.5%",
+        "balance": "100000",
+        "volContirb": "90",
+        "freq": "Fortnightly",
+        "goal": "290000",
+        "risk": "medium"
+      },
+      {
+        "age": "55",
+        "empStatus": "Employed",
+        "salary": "",
+        "empContirb": "",
+        "pir": "10.5%",
+        "balance": "140000",
+        "volContirb": "10",
+        "freq": "Annually",
+        "goal": "200000",
+        "risk": "medium"
+      }
+    ]
+  }
