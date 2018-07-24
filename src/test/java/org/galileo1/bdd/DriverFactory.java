@@ -2,6 +2,7 @@ package org.galileo1.bdd;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 
@@ -46,11 +47,18 @@ public class DriverFactory {
 
   public WebDriver getChromeDriver(String location) {
 		System.setProperty("webdriver.chrome.driver", location + "//src//test//resources//chromedriver");
-		return new ChromeDriver();
+		return new ChromeDriver(setCapabilities());
 		// driver = (WebDriver) Proxy.newProxyInstance(RemoteWebDriver.class.getClassLoader(),
 		// 		new Class[] { WebDriver.class, HasInputDevices.class, TakesScreenshot.class, HasCapabilities.class, Keyboard.class },
 		// 		new MyInvocationHandler(driver));
 		// return driver;
-	}
+  }
+  
+  public ChromeOptions setCapabilities() {
+    final ChromeOptions chromeOptions  = new ChromeOptions();
+      chromeOptions.addArguments("--headless");
+      chromeOptions.addArguments("--disable-gpu");
+      return chromeOptions;
+  }
 }
 
