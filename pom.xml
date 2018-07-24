@@ -99,11 +99,24 @@
     <version>3.0</version>
 </dependency>
 
+<!--extentreports -->
+
+
 <dependency>
-        <groupId>com.relevantcodes</groupId>
-        <artifactId>extentreports</artifactId>
-        <version>2.41.2</version>
-    </dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>3.1.5</version>
+    <scope>provided</scope>
+</dependency>
+
+<!--cucumber-extentsreport -->
+<dependency>
+    <groupId>com.vimalselvam</groupId>
+    <artifactId>cucumber-extentsreport</artifactId>
+    <version>3.1.0</version>
+</dependency>
+
+
 
 	</dependencies>
 
