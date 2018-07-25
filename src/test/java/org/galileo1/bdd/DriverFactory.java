@@ -59,12 +59,12 @@ public class DriverFactory {
   
   private ChromeOptions setCapabilities() {
     final ChromeOptions chromeOptions  = new ChromeOptions();
-      chromeOptions.addArguments("--headless");
-      chromeOptions.addArguments("--no-sandbox");
-      chromeOptions.addArguments("--disable-dev-shm-usage");
-      if (System.getProperty("os.name").toLowerCase().contains("linux")) {
-        chromeOptions.setBinary("/usr/local/bin/chromedriver");
-      }
+      chromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox", "--disable-gpu");
+      // chromeOptions.addArguments("--no-sandbox");
+      // chromeOptions.addArguments("--disable-dev-shm-usage");
+      // if (System.getProperty("os.name").toLowerCase().contains("linux")) {
+      //   chromeOptions.setBinary("/usr/local/bin/chromedriver");
+      // }
       return chromeOptions;
   }
 
@@ -75,7 +75,7 @@ public class DriverFactory {
     if (osname.contains("windows")) {
           setChromeDriverPath("//src//test//resources//chromedriverwindows//chromedriver.exe");
     } else if (osname.contains("linux")) {
-          setChromeDriverPath("/usr/local/bin/chromedriver");
+          setChromeDriverPath("//src//test//resources//chromedriverlinux//chromedriver");
     } else if (osname.contains("mac os")) {
           setChromeDriverPath("//src//test//resources//chromedriver");
     }
