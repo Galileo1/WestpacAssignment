@@ -43,8 +43,8 @@ public class CucumberStepDefs {
         }
     }
 
-    @Given("^a user wants to see the kiwisave retirement projections$")
-    public void a_user_wants_to_see_the_kiwisave_retirement_projections() throws Throwable {
+    @Given("^a user wants to see their kiwisaver retirement projections$")
+    public void a_user_wants_to_see_their_kiwisaver_retirement_projections() throws Throwable {
         if(flag==false) {
             flag=true;
             kiwisavePage.toPage();
