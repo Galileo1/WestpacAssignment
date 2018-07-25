@@ -1,6 +1,6 @@
 package  org.galileo1.bdd.datamodel;
 
-public class DataModel
+public class UserDataModel
 {
     private String age;
     private String empStatus;
@@ -13,7 +13,7 @@ public class DataModel
     private String salary;
     private String empContrib;
 
-    public DataModel(String age,String empStatus,String pir,String balance,String volContrib
+    public UserDataModel(String age,String empStatus,String pir,String balance,String volContrib
                         ,String freq, String risk, String goal,String salary,String empContrib ) {
         this.setAge(age);
         this.setEmpStatus(empStatus);

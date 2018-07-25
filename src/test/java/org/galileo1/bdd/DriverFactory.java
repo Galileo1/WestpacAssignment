@@ -51,7 +51,7 @@ public class DriverFactory {
   
   private ChromeOptions setCapabilities() {
     final ChromeOptions chromeOptions  = new ChromeOptions();
-    chromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox", "--disable-gpu");
+    //chromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox", "--disable-gpu");
     return chromeOptions;
   }
 

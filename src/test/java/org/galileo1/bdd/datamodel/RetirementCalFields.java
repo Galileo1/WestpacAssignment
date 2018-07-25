@@ -1,7 +1,6 @@
-package org.galileo1.bdd.pageobj;
+package org.galileo1.bdd.datamodel;
 
-//@Component
-enum RetirementCalFields {
+public enum RetirementCalFields {
     AGE,
     EMPSTATUS,
     PIR,
