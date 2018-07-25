@@ -57,7 +57,8 @@ public class DriverFactory {
   public ChromeOptions setCapabilities() {
     final ChromeOptions chromeOptions  = new ChromeOptions();
       chromeOptions.addArguments("--headless");
-      chromeOptions.addArguments("--disable-gpu");
+      chromeOptions.addArguments("--no-sandbox");
+      chromeOptions.addArguments("--disable-dev-shm-usage");
       return chromeOptions;
   }
 }
