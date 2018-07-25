@@ -64,11 +64,15 @@ mvn clean install
 
 ```
 Test are configured to run either on MacOS or Windows platform. This has been tested as well.
-The Test can run either on chrome or on firefox browser.Default is chromedriver.
-
 To change the browser: 
 
 Please change property "app.browser" in the "application.properties" file under "src.main.resources"
+
+It can run on Selenium Grid as well using RemoteWebDriver.To do that -
+Please change property "app.browser" to "remote" in the "application.properties" file under "src.main.resources"
+and change the url to that of grid.
+
+Note : Firefox on windows doesn't seem to work. But firefox on MacOS works like a charm.
 ```
 
 ## Extent Reports 
