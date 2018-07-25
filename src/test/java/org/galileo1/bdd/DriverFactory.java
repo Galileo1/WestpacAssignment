@@ -66,12 +66,13 @@ public class DriverFactory {
   }
 
   private void getRunningEnvironment() {
+    
     String osname =System.getProperty("os.name").toLowerCase();
+    System.out.println("====== os name =====: " + osname);
     if (osname.contains("windows")) {
           setChromeDriverPath("//src//test//resources//chromedriverwindows//chromedriver.exe");
     } else if (osname.contains("linux")) {
           setChromeDriverPath("//src//test//resources//chromedriverlinux//chromedriver");
-
     } else if (osname.contains("mac os")) {
           setChromeDriverPath("//src//test//resources//chromedriver");
     }
@@ -79,7 +80,7 @@ public class DriverFactory {
   }
 
   private void setChromeDriverPath(String pathToChromeDriver) {
-    System.setProperty("webdriver.chrome.driver", location + "//src//test//resources//chromedriver");
+    System.setProperty("webdriver.chrome.driver", location + pathToChromeDriver);
   }
 }
 
