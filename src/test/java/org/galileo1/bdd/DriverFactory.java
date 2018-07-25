@@ -72,7 +72,7 @@ public class DriverFactory {
     if (osname.contains("windows")) {
           setChromeDriverPath("//src//test//resources//chromedriverwindows//chromedriver.exe");
     } else if (osname.contains("linux")) {
-          setChromeDriverPath("//src//test//resources//chromedriverlinux//chromedriver");
+          setChromeDriverPath("/usr/bin/google-chrome-stable");
     } else if (osname.contains("mac os")) {
           setChromeDriverPath("//src//test//resources//chromedriver");
     }
