@@ -9,11 +9,12 @@ injections and manage objects and uses extent-cucumber for reports and logging.
 
 ## Development and Test Environment 
 
+```
 Maven: 3.5.4
 Java version: 9.0.4
 OS name: "mac os x", version: "10.13.5", arch: "x86_64"
 OS name: "windows", version: "10", arch: "x86_64"
-
+```
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -26,6 +27,7 @@ Maven 3.4.5
 Git cli 
 Chromedriver version 2.40
 ChromeBrowser version > 66.0 (lastest is preferable)
+
 ```
 
 ### Installing
@@ -63,7 +65,10 @@ mvn clean install
 ```
 Test are configured to run either on MacOS or Windows platform. This has been tested as well.
 The Test can run either on chrome or on firefox browser.Default is chromedriver.
-To change the browser. Please change property "app.browser" in the application.properties file under "src.main.resources"
+
+To change the browser: 
+
+Please change property "app.browser" in the "application.properties" file under "src.main.resources"
 ```
 
 ## Extent Reports 
