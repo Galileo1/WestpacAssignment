@@ -57,3 +57,10 @@ mvn clean install
 - org.galileo1.bdd.pageobj -> contains page object classes
 - org.galileo1.bdd.stepdefs -> contains step definitions
 ```
+
+## Extent Reports 
+
+```
+![Extent Cucumber Reports](https://imgur.com/a/Lsfxwjy)
+
+```
