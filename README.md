@@ -58,6 +58,14 @@ mvn clean install
 - org.galileo1.bdd.stepdefs -> contains step definitions
 ```
 
+## Test Configuration 
+
+```
+Test are configured to run either on MacOS or Windows platform. This has been tested as well.
+The Test can run either on chrome or on firefox browser.Default is chromedriver.
+To change the browser. Please change property "app.browser" in the application.properties file under "src.main.resources"
+```
+
 ## Extent Reports 
 
 ![Extent Cucumber Reports](https://i.imgur.com/QMPXNF5.png)'
