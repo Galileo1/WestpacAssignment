@@ -38,17 +38,7 @@ public class JsonDataProvider {
 	}
 
     public final InfoMessageDataModel getMessageData(String field) {
-
-        //List<InfoMessageDataModel> list 
-        //ArrayList<InfoMessageDataModel> list = new ArrayList(Arrays.asList(messageList));
-        // List<InfoMessageDataModel> list = Arrays.stream(messageList)  //'array' is two-dimensional
-        //                         .flatMap(Arrays::asList)
-        //                         .collect(Collectors.toList());
-        System.out.println("=--------------000--=-==--="+messageList.get(0));
         return messageList.stream().filter(p-> p.getField().equalsIgnoreCase(field)).findAny().get();
-        
-        
-
     }
 
     

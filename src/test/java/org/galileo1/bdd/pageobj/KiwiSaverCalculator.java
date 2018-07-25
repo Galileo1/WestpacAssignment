@@ -16,7 +16,7 @@ import javax.annotation.PostConstruct;
 
 import com.cucumber.listener.Reporter;
 
-import org.galileo1.bdd.DriverFactory;
+import org.galileo1.bdd.datamodel.RetirementCalFields;
 import org.galileo1.bdd.datamodel.UserDataModel;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -27,10 +27,10 @@ import org.openqa.selenium.logging.LogEntry;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
-import org.galileo1.bdd.datamodel.*;
 
 @Component
 // @ConfigurationProperties(prefix = "kiwisaverpage")
@@ -40,7 +40,9 @@ public class KiwiSaverCalculator extends AbstractBasePage {
     @Value("${app.kiwisaverurl}")
     private String baseurl ;
   
-    private WebDriver driver = DriverFactory.getInstance().getDriver();
+    
+    @Autowired
+    private WebDriver driver;
 
     private String title = "KiwiSaver Retirement Calculator - Westpac NZ";
     
@@ -209,7 +211,7 @@ public class KiwiSaverCalculator extends AbstractBasePage {
     @FindBy(css = "div.wpnib-field-savings-goal div.message-row p")
     public WebElement savingsGoalMessageText;
 
-    //TODO: Nasty to understand but works absolutely 
+    //TODO: Nasty to understand but works like a charm
     @FindBy(xpath = "//div[contains(@class, 'field-message message-info ng-binding') and not(contains(@class, 'field-message message-info ng-binding ng-hide'))]/child::*[not(name()='strong' or name()='a')]")
     public List<WebElement> displayedInformation;
 
