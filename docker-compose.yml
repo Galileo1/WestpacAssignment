@@ -1,0 +1,38 @@
+version: '3'
+services:
+  selenium-hub:
+    image: selenium/hub
+    container_name: selenium-hub
+    ports:
+      - 4444:4444
+    environment:
+      - GRID_TIMEOUT=360000
+    networks:
+      testnw: {}
+  chrome:
+    image: selenium/node-chrome
+    container_name: chrome-node
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_PORT_4444_TCP_ADDR=selenium-hub
+      - HUB_PORT_4444_TCP_PORT=4444
+    networks:
+      testnw: {}
+    ports: 
+      - 5555
+    volumes:
+      - /dev/shm:/dev/shm # Mitigates the Chromium issue described at https://code.google.com/p/chromium/issues/detail?id=519952
+  e2e-tests:
+    build: .
+    command: /bin/sleep infinity
+    container_name: test-scripts
+    depends_on:
+      - selenium-hub
+      - chrome
+    networks:
+      testnw: {}
+networks:
+  testnw:
+    driver: bridge
+
