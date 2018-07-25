@@ -1,5 +1,5 @@
 Feature: Automated test
-	Using SuiteCRM online demo page, thank you SuiteCRM!
+	Test Feature
 
   Background: 
     Given a user wants to see the kiwisave retirement projections
@@ -51,7 +51,7 @@ Feature: Automated test
   #   | 30;Employed;17.5%; ; ; ;high; ;82000;4;|
   #   | 45;Self-employed;10.5%;100000;90;Fortnightly;medium;290000; ; ;|
   #   | 55;Not employed;10.5%;140000;10;Annually;medium;200000; ; ;|
-  
+
 
   Scenario Outline: Kiwisaver test3
     
