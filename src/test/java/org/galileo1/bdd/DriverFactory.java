@@ -63,7 +63,7 @@ public class DriverFactory {
       chromeOptions.addArguments("--no-sandbox");
       chromeOptions.addArguments("--disable-dev-shm-usage");
       if (System.getProperty("os.name").toLowerCase().contains("linux")) {
-        chromeOptions.setBinary("/usr/bin/google-chrome-stable");
+        chromeOptions.setBinary("/usr/local/bin/chromedriver");
       }
       return chromeOptions;
   }
@@ -75,7 +75,7 @@ public class DriverFactory {
     if (osname.contains("windows")) {
           setChromeDriverPath("//src//test//resources//chromedriverwindows//chromedriver.exe");
     } else if (osname.contains("linux")) {
-          setChromeDriverPath("/usr/bin/google-chrome-stable");
+          setChromeDriverPath("/usr/local/bin/chromedriver");
     } else if (osname.contains("mac os")) {
           setChromeDriverPath("//src//test//resources//chromedriver");
     }
