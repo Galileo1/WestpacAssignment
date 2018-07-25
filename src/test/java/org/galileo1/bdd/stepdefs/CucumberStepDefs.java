@@ -1,15 +1,19 @@
 package org.galileo1.bdd.stepdefs;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-import org.galileo1.bdd.datamodel.DataModel;
+import org.galileo1.bdd.DriverFactory;
 import org.galileo1.bdd.TestApplication;
+import org.galileo1.bdd.datamodel.DataModel;
 import org.galileo1.bdd.pageobj.Kiwisaver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
 import cucumber.api.DataTable;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -26,59 +30,51 @@ public class CucumberStepDefs {
   private static boolean flag = false;
   private static boolean flag2 = false;
 
+    @After
+    public void afterWeAreDone(Scenario scenario) throws IOException {
+        if (scenario.isFailed()) {
+            
+           //Take base64Screenshot screenshot
+           kiwisavePage.takeScreenshot();
+           //capture browser logs 
+           kiwisavePage.captureBrowserLogs();
+           //switching out of frame
+           DriverFactory.getInstance().getDriver().switchTo().defaultContent();
+        }
+    }
 
-  @Given("^a user wants to see the kiwisave retirement projections$")
-public void a_user_wants_to_see_the_kiwisave_retirement_projections() throws Throwable {
-  if(flag==false) {
-    flag=true;
-    kiwisavePage.toPage();
-  }
-    
-}
+    @Given("^a user wants to see the kiwisave retirement projections$")
+    public void a_user_wants_to_see_the_kiwisave_retirement_projections() throws Throwable {
+        if(flag==false) {
+            flag=true;
+            kiwisavePage.toPage();
+        }
+    }
 
-@When("^user enters their details$")
-public void user_enters_their_details(DataTable empData) throws Throwable {
-    //List<DataModel> memberDetails= new ArrayList<>();	
-    List<List<String>> data = empData.raw();
-    List<DataModel> memberDetails = kiwisavePage.mapTo(data);
-    // List<DataModel> memberDetails = data.stream()
-    //           .map(p-> new DataModel(p.get(0), p.get(1), p.get(2), p.get(3), p.get(4), p.get(5), p.get(6), p.get(7), p.get(8), p.get(9)))
-    //           .collect(Collectors.toList());
-    for (DataModel details : memberDetails) {
-      System.out.println(details.getAge() + details.getBal() );
-        kiwisavePage.enterDetails3(details);
+    @When("^user enters their details$")
+    public void user_enters_their_details(DataTable empData) throws Throwable {
+        List<List<String>> data = empData.raw();
+        List<DataModel> memberDetails = kiwisavePage.mapTo(data);
+        for (DataModel details : memberDetails) {
+        System.out.println(details.getAge() + details.getBal() );
+            kiwisavePage.enterDetails3(details);
+        }
     }
     
-    
-    // for (List<String> Item : data) {  
-    //   kiwisavePage.enterDetails3(Item);
-    // }
-   
-    // System.out.println(data.get(0).get(0));
-    // System.out.println(data.get(0).get(1));
-}
+    @Then("^user is able to see the projected value$")
+    public void user_is_able_to_see_the_projected_value() throws Throwable {
+        
+        kiwisavePage.checkResultsArePresent();
+        kiwisavePage.switchBackToDefault();
+    }
 
-@Then("^user is able to see the projected value$")
-public void user_is_able_to_see_the_projected_value() throws Throwable {
-    
-    kiwisavePage.checkResultsArePresent();
-    kiwisavePage.switchBackToDefault();
-}
-
-
-@When("^user enters their \"([^\"]*)\" in calculator$")
-public void user_enters_their_in_calculator(String arg1) throws Throwable {
-  List<String> memberData = Arrays.asList(arg1.split(";"));
-  DataModel memberDetails = kiwisavePage.mapToDataModel(memberData);
-  System.out.println("memberDetails:  "+memberDetails.getAge());
-  kiwisavePage.enterDetails3(memberDetails);
-  
-
-  //Working 
-  // System.out.println(memberData);
-  // kiwisavePage.enterDetails2(memberData);
-    
-}
+    @When("^user enters their \"([^\"]*)\" in calculator$")
+        public void user_enters_their_in_calculator(String arg1) throws Throwable {
+        List<String> memberData = Arrays.asList(arg1.split(";"));
+        DataModel memberDetails = kiwisavePage.mapToDataModel(memberData);
+        //System.out.println("memberDetails:  "+memberDetails.getAge());
+        kiwisavePage.enterDetails3(memberDetails);
+    }
 
 @When("^user selects the information icon$")
 public void user_selects_the_information_icon() throws Throwable {

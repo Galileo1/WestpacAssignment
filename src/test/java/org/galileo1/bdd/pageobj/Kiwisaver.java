@@ -5,6 +5,8 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertTrue;
 
+import java.io.IOException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,11 +14,18 @@ import java.util.stream.Collectors;
 
 import javax.annotation.PostConstruct;
 
+import com.cucumber.listener.Reporter;
+
 import org.galileo1.bdd.datamodel.DataModel;
 import org.galileo1.bdd.DriverFactory;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -583,6 +592,31 @@ public void checkInfoMessage(String expectedMessage, String label) {
   //System.out.print("JSON DATA +_+_+_+__+_+_+: "+ jsonDataProvider.getMessageData(label).getMessage());
   //jsonDataProvider.getMessageData(label);
 }
+
+public void takeScreenshot() {
+  
+    //Take base64Screenshot screenshot.
+    String base64Screenshot = "data:image/png;base64,"+((TakesScreenshot)driver).
+    getScreenshotAs(OutputType.BASE64);
+
+    //Attach the base64Screenshot to extent report
+    try {
+        Reporter.addScreenCaptureFromPath(base64Screenshot);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+}
+
+  public void captureBrowserLogs() {
+    Reporter.addScenarioLog("=========== Browser Logs ===================");
+    
+    //Add browser logs  
+    LogEntries logEntries = driver.manage().logs().get(LogType.BROWSER);
+    for (LogEntry entry : logEntries) {
+        Reporter.addScenarioLog(new Date(entry.getTimestamp()) + " " + entry.getLevel() + " " + entry.getMessage());
+    }
+  }
+
 
 
 

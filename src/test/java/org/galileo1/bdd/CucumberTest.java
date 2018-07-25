@@ -8,7 +8,6 @@ import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.test.context.ContextConfiguration;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -40,7 +39,7 @@ public class CucumberTest {
 	// }
 
     private TestNGCucumberRunner testNGCucumberRunner;
-	   
+	
 	@BeforeClass(alwaysRun = true)
 	public void setUpClass() {
 		testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
@@ -66,5 +65,5 @@ public class CucumberTest {
         DriverFactory.getInstance().getDriver().close();
 		testNGCucumberRunner.finish();
 	}
-
+	
 }

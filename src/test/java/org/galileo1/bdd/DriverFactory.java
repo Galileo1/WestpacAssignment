@@ -15,7 +15,7 @@ public class DriverFactory {
   String location = System.getProperty("user.dir");
 
   private DriverFactory() {
-    // Do-nothing..Do not allow to initialize this class from outside
+    // Driver Singleton Factory Class. Do not nitialize this class from outside
   }
 
   private static DriverFactory instance = new DriverFactory();
@@ -28,10 +28,7 @@ public class DriverFactory {
   ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>() {
     @Override
     protected WebDriver initialValue() {
-      //String location = System.getProperty("user.dir");
-      System.out.println("+++++++++++++++++behwbfnicklefmeolrkn dmdd+_+__+++++++++++" +location + browser);
       return getChromeDriver(location);
-      //return new FirefoxDriver(); // or other browser drivers
     }
   };
 
@@ -49,29 +46,18 @@ public class DriverFactory {
 
   public WebDriver getChromeDriver(String location) {
     getRunningEnvironment();
-		//System.setProperty("webdriver.chrome.driver", location + "//src//test//resources//chromedriver");
 		return new ChromeDriver(setCapabilities());
-		// driver = (WebDriver) Proxy.newProxyInstance(RemoteWebDriver.class.getClassLoader(),
-		// 		new Class[] { WebDriver.class, HasInputDevices.class, TakesScreenshot.class, HasCapabilities.class, Keyboard.class },
-		// 		new MyInvocationHandler(driver));
-		// return driver;
   }
   
   private ChromeOptions setCapabilities() {
     final ChromeOptions chromeOptions  = new ChromeOptions();
-      chromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox", "--disable-gpu");
-      // chromeOptions.addArguments("--no-sandbox");
-      // chromeOptions.addArguments("--disable-dev-shm-usage");
-      // if (System.getProperty("os.name").toLowerCase().contains("linux")) {
-      //   chromeOptions.setBinary("/usr/local/bin/chromedriver");
-      // }
-      return chromeOptions;
+    chromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox", "--disable-gpu");
+    return chromeOptions;
   }
 
   private void getRunningEnvironment() {
     
     String osname =System.getProperty("os.name").toLowerCase();
-    System.out.println("====== os name =====: " + osname);
     if (osname.contains("windows")) {
           setChromeDriverPath("//src//test//resources//chromedriverwindows//chromedriver.exe");
     } else if (osname.contains("linux")) {
