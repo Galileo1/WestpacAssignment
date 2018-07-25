@@ -62,6 +62,9 @@ public class DriverFactory {
       chromeOptions.addArguments("--headless");
       chromeOptions.addArguments("--no-sandbox");
       chromeOptions.addArguments("--disable-dev-shm-usage");
+      if (System.getProperty("os.name").toLowerCase().contains("linux")) {
+        chromeOptions.setBinary("/usr/bin/google-chrome-stable");
+      }
       return chromeOptions;
   }
 
