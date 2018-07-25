@@ -61,6 +61,6 @@ mvn clean install
 ## Extent Reports 
 
 ```
-[Extent Cucumber Reports](https://i.imgur.com/QMPXNF5.png)
+![Extent Cucumber Reports](https://i.imgur.com/QMPXNF5.png)
 
 ```
