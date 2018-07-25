@@ -60,6 +60,8 @@ mvn clean install
 
 ## Extent Reports 
 
-![Extent Cucumber Reports](https://i.imgur.com/QMPXNF5.png)
+![Extent Cucumber Reports](https://i.imgur.com/QMPXNF5.png)'
 
-![Screencast](https://i.imgur.com/vyREbRY.gifv)
+## Test Run 
+
+![Screencast](https://i.imgur.com/vyREbRY.gif)
