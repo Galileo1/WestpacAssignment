@@ -1,9 +1,9 @@
 FROM maven:3.5.4-jdk-9-slim
 LABEL name="varun"
 
-RUN  mkdir -p /usr/share/man/man1 && \
+RUN  apt-get update && \
     (echo "deb http://http.debian.net/debian jessie-backports main" > /etc/apt/sources.list.d/backports.list) && \
-    apt-get update && \
+    mkdir -p /usr/share/man/man1 && \
     apt-get install -y xvfb wget ca-certificates-java -t jessie-backports openjdk-8-jre && \
     wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
     dpkg --unpack google-chrome-stable_current_amd64.deb && \
