@@ -66,7 +66,7 @@ public class DriverConfiguration  {
         if (osname.contains("windows") && browser.contains("chrome")) {
               setChromeDriverPath("//src//test//resources//chromedriverwindows//chromedriver.exe");
         } else if (osname.contains("linux") && browser.contains("chrome")) {
-              setChromeDriverPath("//src//test//resources//chromedriver");
+              setChromeDriverPath("//src//test//resources//chromedriverlinux//chromedriver");
         } else if (osname.contains("mac os") && browser.contains("chrome")) {
               setChromeDriverPath("//src//test//resources//chromedriver");
         } else if (osname.contains("mac os") && browser.contains("firefox")) {
