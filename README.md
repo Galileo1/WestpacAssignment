@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Galileo1/WestpacAssignment.svg?branch=first_branch)](https://travis-ci.org/Galileo1/WestpacAssignment)
+
 # WestpacAssignment
 
 
