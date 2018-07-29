@@ -2,13 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="Regression Suite">
-<listeners>
+<!-- <listeners>
         <listener class-name="org.galileo1.bdd.helpers.TestListener"></listener>
-</listeners>
+</listeners> -->
 
 <test name="SampleTest">
 <classes>
-<class name="org.galileo1.bdd.SampleTestClass"></class>
+<class name="org.galileo1.bdd.CucumberTest"></class>
 </classes>
 </test>
 

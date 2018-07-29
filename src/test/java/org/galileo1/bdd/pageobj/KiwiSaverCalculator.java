@@ -47,179 +47,179 @@ public class KiwiSaverCalculator extends AbstractBasePage {
     private String title = "KiwiSaver Retirement Calculator - Westpac NZ";
     
     @FindBy(css = "div.wpnib-field-current-age")
-    public WebElement currentAgeBlock;
+    private WebElement currentAgeBlock;
     
     @FindBy(css = "div.wpnib-field-current-age input")
-    public WebElement currentAgeTextField;
+    private WebElement currentAgeTextField;
     
     @FindBy(css = "div.wpnib-field-current-age div.field-info button")
-    public WebElement currentAgeInformatioIcon;
+    private WebElement currentAgeInformatioIcon;
     
     @FindBy(css = "div.wpnib-field-current-age div.message-row")
-    public WebElement currentAgeFieldMessageContainer;
+    private WebElement currentAgeFieldMessageContainer;
     
     @FindBy(css = "div.wpnib-field-current-age div.message-row div.field-message.message-info.ng-binding.ng-hide")
-    public WebElement currentAgeFieldMessageBlock;
+    private WebElement currentAgeFieldMessageBlock;
     
     @FindBy(css = "div.wpnib-field-current-age div.message-row p")
-    public WebElement currentAgeFieldMessageText;
+    private WebElement currentAgeFieldMessageText;
     
     @FindBy(css = "div.wpnib-field-employment-status")
-    public WebElement empStatusBlock;
+    private WebElement empStatusBlock;
     
     @FindBy(css = "div.wpnib-field-employment-status div.control-well")
-    public WebElement empStatusDropDown;
+    private WebElement empStatusDropDown;
     
     @FindBy(css = "div.wpnib-field-employment-status div.field-info button")
-    public WebElement empStatusInformatioIcon;
+    private WebElement empStatusInformatioIcon;
     
     @FindBy(css = "div.wpnib-field-employment-status div.message-row")
-    public WebElement empStatusFieldMessageContainer;
+    private WebElement empStatusFieldMessageContainer;
     
     @FindBy(css = "div.wpnib-field-employment-status div.message-row div.field-message.message-info.ng-binding.ng-hide")
-    public WebElement empStatusFieldMessageBlock;
+    private WebElement empStatusFieldMessageBlock;
     
     @FindBy(css = "div.wpnib-field-employment-status div.message-row p")
-    public WebElement empStatusMessageText;
+    private WebElement empStatusMessageText;
     
     @FindBy(css = "div.wpnib-field-pir-rate")
-    public WebElement pirBlock;
+    private WebElement pirBlock;
     
     @FindBy(css = "div.wpnib-field-pir-rate div.control-well")
-    public WebElement pirDropDown;
+    private WebElement pirDropDown;
     
     @FindBy(css = "div.wpnib-field-pir-rate button")
-    public WebElement pirInformatioIcon;
+    private WebElement pirInformatioIcon;
     
     @FindBy(css = "div.wpnib-field-pir-rate div.message-row")
-    public WebElement pirFieldMessageContainer;
+    private WebElement pirFieldMessageContainer;
     
     @FindBy(css = "div.wpnib-field-pir-rate div.message-row div.field-message.message-info.ng-binding.ng-hide")
-    public WebElement pirFieldMessageBlock;
+    private WebElement pirFieldMessageBlock;
     
     @FindBy(css = "div.wpnib-field-pir-rate div.message-row p")
-    public WebElement pirMessageText;
+    private WebElement pirMessageText;
 
     @FindBy(css = "div.wpnib-field-annual-income")
-    public WebElement annualIncomeBlock;
+    private WebElement annualIncomeBlock;
     
     @FindBy(css = "div.wpnib-field-annual-income input")
-    public WebElement annualIncomeTextField;
+    private WebElement annualIncomeTextField;
     
     @FindBy(css = "div.wpnib-field-annual-income button")
-    public WebElement annualIncomeInformatioIcon;
+    private WebElement annualIncomeInformatioIcon;
     
     @FindBy(css = "div.wpnib-field-annual-income div.message-row")
-    public WebElement annualIncomeMessageContainer;
+    private WebElement annualIncomeMessageContainer;
     
     @FindBy(css = "div.wpnib-field-annual-income div.message-row div.field-message.message-info.ng-binding.ng-hide")
-    public WebElement annualIncomeMessageBlock;
+    private WebElement annualIncomeMessageBlock;
     
     @FindBy(css = "div.wpnib-field-annual-income div.message-row p")
-    public WebElement annualIncomeMessageText;
+    private WebElement annualIncomeMessageText;
 
     @FindBy(css = "div.wpnib-field-kiwisaver-member-contribution")
-    public WebElement memberContributionBlock;
+    private WebElement memberContributionBlock;
     
     @FindBy(css = "div.wpnib-field-kiwisaver-member-contribution input")
-    public List<WebElement> memberContributionTextField;
+    private List<WebElement> memberContributionTextField;
     
     @FindBy(css = "div.wpnib-field-kiwisaver-member-contribution button")
-    public WebElement memberContributionInformatioIcon;
+    private WebElement memberContributionInformatioIcon;
     
     @FindBy(css = "div.wpnib-field-kiwisaver-member-contribution div.message-row")
-    public WebElement memberContributionMessageContainer;
+    private WebElement memberContributionMessageContainer;
     
     @FindBy(css = "div.wpnib-field-kiwisaver-member-contribution div.message-row div.field-message.message-info.ng-binding.ng-hide")
-    public WebElement memberContributionMessageBlock;
+    private WebElement memberContributionMessageBlock;
     
     @FindBy(css = "div.wpnib-field-kiwisaver-member-contribution div.message-row p")
-    public WebElement memberContributionMessageText;
+    private WebElement memberContributionMessageText;
     
     @FindBy(css = "div.wpnib-field-kiwi-saver-balance")
-    public WebElement kiwiSaverBalanceBlock;
+    private WebElement kiwiSaverBalanceBlock;
     
     @FindBy(css = "div.wpnib-field-kiwi-saver-balance input")
-    public WebElement kiwiSaverBalanceTextField;
+    private WebElement kiwiSaverBalanceTextField;
     
     @FindBy(css = "div.wpnib-field-kiwi-saver-balance button")
-    public WebElement kiwiSaverBalanceInformatioIcon;
+    private WebElement kiwiSaverBalanceInformatioIcon;
     
     @FindBy(css = "div.wpnib-field-kiwi-saver-balance div.message-row")
-    public WebElement kiwiSaverBalanceMessageContainer;
+    private WebElement kiwiSaverBalanceMessageContainer;
     
     @FindBy(css = "div.wpnib-field-kiwi-saver-balance div.message-row div.field-message.message-info.ng-binding.ng-hide")
-    public WebElement kiwiSaverBalanceMessageBlock;
+    private WebElement kiwiSaverBalanceMessageBlock;
     
     @FindBy(css = "div.wpnib-field-kiwi-saver-balance div.message-row p")
-    public WebElement kiwiSaverBalanceMessageText;
+    private WebElement kiwiSaverBalanceMessageText;
     
     @FindBy(css = "div.wpnib-field-voluntary-contributions")
-    public WebElement voluntaryContributionBlock;
+    private WebElement voluntaryContributionBlock;
     
     @FindBy(css = "div.wpnib-field-voluntary-contributions input")
-    public WebElement voluntaryContributionTextField;
+    private WebElement voluntaryContributionTextField;
 
     @FindBy(css = "div.wpnib-field-voluntary-contributions  div.control-well[ng-click]")
-    public WebElement voluntaryContributionFrequency;
+    private WebElement voluntaryContributionFrequency;
     
     @FindBy(css = "div.wpnib-field-voluntary-contributions button")
-    public WebElement voluntaryContributionInformatioIcon;
+    private WebElement voluntaryContributionInformatioIcon;
     
     @FindBy(css = "div.wpnib-field-voluntary-contributions div.message-row")
-    public WebElement voluntaryContributionMessageContainer;
+    private WebElement voluntaryContributionMessageContainer;
     
     @FindBy(css = "div.wpnib-field-voluntary-contributions div.message-row div.field-message.message-info.ng-binding.ng-hide")
-    public WebElement voluntaryContributionMessageBlock;
+    private WebElement voluntaryContributionMessageBlock;
     
     @FindBy(css = "div.wpnib-field-voluntary-contributions div.message-row p")
-    public WebElement voluntaryContributionMessageText;
+    private WebElement voluntaryContributionMessageText;
 
     @FindBy(css = "div.wpnib-field-risk-profile")
-    public WebElement riskProfileBlock;
+    private WebElement riskProfileBlock;
     
     @FindBy(css = "div.wpnib-field-risk-profile input")
-    public List<WebElement> riskProfileTextField;
+    private List<WebElement> riskProfileTextField;
     
     @FindBy(css = "div.wpnib-field-risk-profile button")
-    public WebElement riskProfileInformatioIcon;
+    private WebElement riskProfileInformatioIcon;
     
     @FindBy(css = "div.wpnib-field-risk-profile div.message-row")
-    public WebElement riskProfileMessageContainer;
+    private WebElement riskProfileMessageContainer;
     
     @FindBy(css = "div.wpnib-field-risk-profile div.message-row div.field-message.message-info.ng-binding.ng-hide")
-    public WebElement riskProfileMessageBlock;
+    private WebElement riskProfileMessageBlock;
     
     @FindBy(css = "div.wpnib-field-risk-profile div.message-row p")
-    public WebElement riskProfileMessageText;
+    private WebElement riskProfileMessageText;
 
     @FindBy(css = "div.wpnib-field-savings-goal")
-    public WebElement savingsGoalBlock;
+    private WebElement savingsGoalBlock;
     
     @FindBy(css = "div.wpnib-field-savings-goal input")
-    public WebElement savingsGoalTextField;
+    private WebElement savingsGoalTextField;
     
     @FindBy(css = "div.wpnib-field-savings-goal button")
-    public WebElement savingsGoalInformatioIcon;
+    private WebElement savingsGoalInformatioIcon;
     
     @FindBy(css = "div.wpnib-field-savings-goal div.message-row")
-    public WebElement savingsGoalMessageContainer;
+    private WebElement savingsGoalMessageContainer;
     
     @FindBy(css = "div.wpnib-field-savings-goal div.message-row div.field-message.message-info.ng-binding.ng-hide")
-    public WebElement savingsGoalMessageBlock;
+    private WebElement savingsGoalMessageBlock;
     
     @FindBy(css = "div.wpnib-field-savings-goal div.message-row p")
-    public WebElement savingsGoalMessageText;
+    private WebElement savingsGoalMessageText;
 
     //TODO: Nasty to understand but works like a charm
     @FindBy(xpath = "//div[contains(@class, 'field-message message-info ng-binding') and not(contains(@class, 'field-message message-info ng-binding ng-hide'))]/child::*[not(name()='strong' or name()='a')]")
-    public List<WebElement> displayedInformation;
+    private List<WebElement> displayedInformation;
 
     @FindBy(css = "button.btn-results-reveal")
-    public WebElement calculateButton;
+    private WebElement calculateButton;
 
     @FindBy(css = "div.results-field-group-set")
-    public WebElement projectedNumbers;
+    private WebElement projectedNumbers;
 
     @PostConstruct
     public void init() {
@@ -239,7 +239,6 @@ public class KiwiSaverCalculator extends AbstractBasePage {
     } 
 
     public void selectMemberContribution(final String text) {
-      //System.out.println("Member contribution:" + text);
       selectFromRadioButtons(memberContributionTextField,text); 
     } 
 

@@ -1,6 +1,7 @@
 package org.galileo1.bdd;
 
 import java.io.File;
+import java.util.Properties;
 
 import javax.annotation.PreDestroy;
 
@@ -29,12 +30,8 @@ import cucumber.api.testng.TestNGCucumberRunner;
 				"rerun:target/cucumber-reports/rerun.txt",
 				"com.cucumber.listener.ExtentCucumberFormatter:"
 			    })
-//@ComponentScan(basePackages ="org.galileo1")
-//@ContextConfiguration(classes = DriverConfiguration.class)
-//@SpringBootApplication()
-@SpringBootConfiguration()
 
-//@ContextConfiguration
+@SpringBootConfiguration()
 @ContextConfiguration(classes = DriverConfiguration.class)
 public class CucumberTest {
 
@@ -45,7 +42,7 @@ public class CucumberTest {
 	@PreDestroy
     public void destroy(){
         try{
-            System.out.println("Inside destroy() method...");
+            //System.out.println("Inside destroy() method...");
             if(driver != null) {
                 driver.close();
             }
@@ -59,6 +56,8 @@ public class CucumberTest {
 	@BeforeClass(alwaysRun = true)
 	public void setUpClass() {
 		testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
+		// Properties properties = System.getProperties();
+        // properties.setProperty("spring.profiles.active", "ci");
 	}
 
 

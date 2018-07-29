@@ -18,10 +18,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-    <cucumber.java.version>1.2.5</cucumber.java.version>
-    <selenium.version>3.13.0</selenium.version>
-
-	</properties>
+        <cucumber.java.version>1.2.5</cucumber.java.version>
+        <selenium.version>3.13.0</selenium.version>
+        <!-- <APP_PROPERTIES>db.properties</APP_PROPERTIES> -->
+ </properties>
 
 	<dependencies>
     <!--Spring Boot -->
@@ -102,41 +102,39 @@
 <!--extentreports -->
 
 
-<dependency>
-    <groupId>com.aventstack</groupId>
-    <artifactId>extentreports</artifactId>
-    <version>3.1.5</version>
-    <scope>provided</scope>
-</dependency>
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>3.1.5</version>
+            <scope>provided</scope>
+        </dependency>
 
-<!--cucumber-extentsreport -->
-<dependency>
-    <groupId>com.vimalselvam</groupId>
-    <artifactId>cucumber-extentsreport</artifactId>
-    <version>3.1.0</version>
-</dependency>
-
-
-
+        <!--cucumber-extentsreport -->
+        <dependency>
+            <groupId>com.vimalselvam</groupId>
+            <artifactId>cucumber-extentsreport</artifactId>
+            <version>3.1.0</version>
+        </dependency>
 	</dependencies>
 
 	<build>
         <resources>     
             <resource>
-                <directory>src/main/resources</directory>
+                <directory>src/test/resources</directory>
                  <filtering>true</filtering>
                 <includes>                      
                     <include>**/*.properties</include>                  
                 </includes>
             </resource>            
         </resources>
+    
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
         <version>2.0.3.RELEASE</version>
 			</plugin>
-       <!-- <plugin>
+       <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.0</version>
@@ -144,11 +142,15 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <forkCount>3</forkCount>
-                    <reuseForks>true</reuseForks> -->
-                    <!-- <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+                    <systemPropertyVariables>
+                         <spring.profiles.active>ci</spring.profiles.active>
+                    </systemPropertyVariables>
+                    <!-- <forkCount>3</forkCount>
+                    <reuseForks>true</reuseForks> 
+                     <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine> -->
+
                 </configuration>  
-            </plugin> -->
+            </plugin>
 		</plugins>
 	</build>
 </project>

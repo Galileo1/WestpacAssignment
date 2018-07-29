@@ -1,7 +1,5 @@
 package org.galileo1.bdd.driver;
 
-
-
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -14,19 +12,22 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.Profile;
 
 @Configuration
+@Profile("ci")
 @ComponentScan("org.galileo1")
-@PropertySource("classpath:application.properties")
-public class DriverConfiguration  {
-    String location = System.getProperty("user.dir");
+//@PropertySource("application.properties")
+//@PropertySource("classpath:application-ci.properties")
+//@ImportResource({"classpath:application.properties", "classpath:application-ci.properties"})
 
-    
+public class DriverConfiguration  {
+
+	String location = System.getProperty("user.dir");
+
     @Value("${app.browser}")
     private String browser;
     
-   // destroyMethod="quit"
     @Bean(destroyMethod="quit")
     public WebDriver webDriver() {
         getRunningEnvironment();
@@ -34,6 +35,8 @@ public class DriverConfiguration  {
     }
 
     private WebDriver getDriver() {
+        System.out.println("=====browser=====:" + browser);
+
         switch(browser) {
             case "chrome" :
                 return new ChromeDriver(setChromeCapabilities());
@@ -41,9 +44,8 @@ public class DriverConfiguration  {
                 return new FirefoxDriver();
             case "remote":
                 try {
-                    return new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"), setChromeCapabilities());
+                    return new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"), setChromeCapabilities());
                 } catch (MalformedURLException e) {
-                    
                     e.printStackTrace();
                 }
             default:

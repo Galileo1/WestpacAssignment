@@ -6,4 +6,5 @@
     <logger name="org.galileo1" level="TRACE"/>
     <logger name="org.galileo1" level="WARN"/>
     <logger name="org.galileo1" level="OFF"/>
+    <logger name="org.springframework" level="ERROR"/>
 </configuration>
