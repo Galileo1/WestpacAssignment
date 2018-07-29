@@ -44,7 +44,7 @@ public class DriverConfiguration  {
                 return new FirefoxDriver();
             case "remote":
                 try {
-                    return new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"), setChromeCapabilities());
+                    return new RemoteWebDriver(new URL("http://selenium-hub:4444/wd/hub"), setChromeCapabilities());
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
