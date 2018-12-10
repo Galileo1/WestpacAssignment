@@ -73,3 +73,7 @@ To change the browser. Please change property "app.browser" in the application.p
 ## Test Run 
 
 ![Screencast](https://i.imgur.com/vyREbRY.gif)
+
+## Running parallel
+
+ mvn integration-test -Pci
