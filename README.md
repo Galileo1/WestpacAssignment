@@ -77,3 +77,31 @@ To change the browser. Please change property "app.browser" in the application.p
 ## Running parallel
 
  mvn integration-test -Pci
+
+## Run static analysis 
+
+### Prerequisites
+
+```
+docker
+```
+
+## Commands 
+
+Run the docker image to setup up sonarqube and postgres db. It should get hosted on localhost:80/ or 0.0.0.0:80/  or 127.0.0.1:80/  depending upon your host file.
+
+```
+docker-compose up -d
+```
+
+Login into the sonarqube using below credentials: 
+```
+    username - admin
+    password - bitnami
+```
+
+Run maven profile-
+
+```
+mvn sonar:sonar
+```

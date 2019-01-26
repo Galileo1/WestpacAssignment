@@ -149,6 +149,30 @@
         </plugins>
      </build>
      </profile>
+
+     <profile>
+     <id>sonar</id>
+     <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+                <!-- Optional URL to server. Default value is http://localhost:9000 -->
+                <sonar.host.url>http://0.0.0.0:80</sonar.host.url>
+                <sonar.login>admin</sonar.login>
+                <sonar.password>bitnami</sonar.password>
+            </properties>
+        <build>
+            <pluginManagement>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonarsource.scanner.maven</groupId>
+                        <artifactId>sonar-maven-plugin</artifactId>
+                        <version>3.6.0.1398</version>
+                    </plugin>
+                </plugins>
+            </pluginManagement>
+        </build>
+     </profile>
    
      <profile>
      <id>ci</id>
